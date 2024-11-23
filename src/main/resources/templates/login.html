@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<font th:text="${msg}" color='green' size="5"></font>	
+	
+	<h2>To-Do User Login</h2>
+	<form th:action="@{login}" th:object="${userLogin}" method="POST">
+		<table>
+			<tr>
+				<td>Email</td>
+				<td><input type="email" th:field="*{email}" required="required"></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><input type="password" th:field="*{password}" required="required"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Login"></td>
+			</tr>			
+			<tr>
+				<td></td>
+				<td><a href="/registerForm">New User?</a></td>
+			</tr>			
+		</table>
+	</form>
+	
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>To-Do Task</h2>
+	<form th:action="@{saveTask}" th:object="${task}" method="POST">
+		<table>
+			<tr>
+				<td>Task Name</td>
+				<td><input type="text" required="required" th:field="*{taskName}"></td>
+			</tr>	
+			<tr>
+				<td>Date</td>
+				<td><input type="date" required="required" th:field="*{taskDate}"></td>
+			</tr>	
+			<tr>
+				<td>Timings</td>
+				<td>
+					<select th:field="*{timings}" required="required">
+						<option value="">-Select-</option>
+						<option value="1AM">1AM</option>
+						<option value="2AM">2AM</option>
+						<option value="3AM">3AM</option>
+						<option value="4AM">4AM</option>
+						<option value="5AM">5AM</option>
+						<option value="6AM">6AM</option>
+						<option value="7AM">7AM</option>
+						<option value="8AM">8AM</option>
+						<option value="9AM">9AM</option>
+						<option value="10AM">10AM</option>
+						<option value="11AM">11AM</option>
+						<option value="12PM">12PM</option>
+						<option value="1PM">13PM</option>
+						<option value="2PM">14PM</option>
+						<option value="3PM">15PM</option>
+						<option value="4PM">16PM</option>
+						<option value="5PM">17PM</option>
+						<option value="6PM">18PM</option>
+						<option value="7PM">19PM</option>
+						<option value="8PM">20PM</option>
+						<option value="9PM">21PM</option>
+						<option value="10PM">22PM</option>
+						<option value="11PM">23PM</option>
+						<option value="12AM">24AM</option>						
+					</select>
+				</td>
+			</tr>	
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Create To-do"></td>
+			</tr>	
+		</table>
+	</form>
+</body>
+</html>

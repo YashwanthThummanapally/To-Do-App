@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>To-Do</h2>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>SNO</th>
+				<th>Task ID</th>
+				<th>Task Name</th>
+				<th>Task Date</th>
+				<th>Timings</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="task, iterStat : ${tasks}">
+				<td th:text="${iterStat.index+1}"></td>
+				<td th:text="${task.taskId}"></td>
+				<td th:text="${task.taskName}"></td>
+				<td th:text="${task.taskDate}"></td>
+				<td th:text="${task.timings}"></td>
+			</tr>
+		</tbody>
+	</table>
+	<a href="createTask">Create Task</a>
+	<a href="logout">Logout</a>	
+</body>
+</html>

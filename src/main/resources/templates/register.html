@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<font th:text="${msg}" color="green" size="5"></font>
+	<h2>To-Do User Registration</h2>
+	<form th:action="@{register}" th:object="${user}" method="POST">
+		<table>
+			<tr>
+				<td>Name</td>
+				<td><input type="text" th:field="*{username}"></td>
+				<td th:if="${#fields.hasErrors('username')}" th:errors="*{username}" />
+			</tr>	
+			<tr>
+				<td>Email</td>
+				<td><input type="email" th:field="*{email}"></td>
+				<td th:if="${#fields.hasErrors('email')}" th:errors="*{email}" />
+			</tr>	
+			<tr>
+				<td>Password</td>
+				<td><input type="password" th:field="*{password}"></td>
+				<td th:if="${#fields.hasErrors('password')}" th:errors="*{password}" />
+			</tr>	
+			<tr>
+				<td>Gender</td>
+				<td>
+					<input type="radio" th:field="*{gender}" value="Male">Male
+					<input type="radio" th:field="*{gender}" value="Female">Female
+				</td>
+				<td th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}" />
+			</tr>	
+			<tr>
+				<td>Phone Number</td>
+				<td><input type="number" max="9999999999" min="6000000000" th:field="*{phoneNumber}"></td>
+				<td th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}" />
+			</tr>	
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Register"></td>
+			</tr>	
+			
+		</table>
+	</form>
+</body>
+</html>
